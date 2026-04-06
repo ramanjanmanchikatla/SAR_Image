@@ -1,0 +1,45 @@
+# Virtual environment
+Sar_app/venv/
+venv/
+.env
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Images (sample/test images in root)
+*.jpg
+*.jpeg
+*.png
+*.webp
+*.bmp
+*.tiff
+*.gif
+
+
+# MHTML files
+*.mhtml
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Model weights (downloaded at runtime from HuggingFace)
+*.pt
+*.pth
+*.bin
+*.onnx
+
+# OS files
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
