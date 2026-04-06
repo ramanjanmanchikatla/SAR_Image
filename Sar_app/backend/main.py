@@ -5,6 +5,7 @@ using an EfficientNet B0 model hosted on Hugging Face.
 """
 
 import io
+import os
 from pathlib import Path
 from typing import Optional, List
 import torch
@@ -19,6 +20,10 @@ from PIL import Image
 from torchvision import transforms
 from openai import OpenAI
 from pydantic import BaseModel
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv(Path(__file__).resolve().parent / ".env")
 
 # ──────────────────────────── Paths ────────────────────────────
 
@@ -44,7 +49,7 @@ VEHICLE_INFO = {
 
 openrouter_client = OpenAI(
     base_url="https://openrouter.ai/api/v1",
-    api_key="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",
+    api_key=os.environ.get("OPENROUTER_API_KEY"),
 )
 
 SAR_SYSTEM_PROMPT = """You are an expert AI assistant specialized in Synthetic Aperture Radar (SAR) imagery and military vehicle recognition. You are integrated into a SAR Target Classifier application that uses an EfficientNet B0 model trained on the MSTAR (Moving and Stationary Target Acquisition and Recognition) dataset.
